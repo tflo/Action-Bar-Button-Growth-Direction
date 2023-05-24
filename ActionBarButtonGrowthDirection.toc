@@ -1,6 +1,6 @@
 ## Interface: 100100
 ## Title: Action Bar Button Growth Direction
-## Version: 1.0
+## Version: 1.0.1
 ## Notes: Reverse button growth direction (top/bottom, right/left) of any multi-row/column action bar.
 ## Author: Mot
 
@@ -11,7 +11,7 @@
 # LoadOnDemand:
 
 ## X-Wago-ID:
-# X-Curse-Project-ID: 865551
+## X-Curse-Project-ID: 865551
 
 ## SavedVariables: ABBGD_db
 # SavedVariablesPerCharacter:
