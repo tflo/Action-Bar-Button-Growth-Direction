@@ -1,6 +1,6 @@
 local addon_name, a = ...
 
-local debug = true
+local debug = false
 local modified = {}
 
 local function dprint(...)
@@ -9,7 +9,7 @@ end
 
 local defaults = {
 	method = 1,
-	enable = { y = true, x = false },
+	enable = { y = 'some', x = 'none' },
 	y = {
 		[1] = true,
 		[2] = false,
@@ -67,10 +67,10 @@ local reverse_growth = {
 }
 
 local function modify_bars()
-	for axis, enable in pairs(adb.enable) do
-		if enable then
-			for bar, enable in pairs(adb[axis]) do
-				if enable then
+	for axis, enableaxis in pairs(adb.enable) do
+		if enableaxis ~= 'none' then
+			for bar, enablebar in pairs(adb[axis]) do
+				if enableaxis == 'all' or enablebar then
 					bar = map[bar]
 					reverse_growth[adb.method](axis, bar)
 					modified[bar] = true
