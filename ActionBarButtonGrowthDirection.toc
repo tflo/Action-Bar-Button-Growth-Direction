@@ -1,5 +1,5 @@
 ## Interface: 100100
-## Title: Action Bar Button Layout Orientation
+## Title: Action Bar Button Growth Direction
 ## Version: 1.0
 ## Notes: Reverse button growth direction (top/bottom, right/left) of any multi-row/column action bar.
 ## Author: Mot
