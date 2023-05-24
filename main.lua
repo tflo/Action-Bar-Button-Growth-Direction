@@ -34,8 +34,6 @@ local defaults = {
 	},
 }
 
-local adb = defaults
-
 local map = {
 	[1] = 'MainMenuBar',
 	[2] = 'MultiBarBottomLeft',
@@ -69,12 +67,12 @@ local reverse_growth = {
 }
 
 local function modify_bars()
-	for axis, enableaxis in pairs(adb.enable) do
+	for axis, enableaxis in pairs(a.db.enable) do
 		if enableaxis ~= 'none' then
-			for bar, enablebar in pairs(adb[axis]) do
+			for bar, enablebar in pairs(a.db[axis]) do
 				if enableaxis == 'all' or enablebar then
 					bar = map[bar]
-					reverse_growth[adb.method](axis, bar)
+					reverse_growth[a.db.method](axis, bar)
 					modified[bar] = true
 				end
 			end
@@ -104,10 +102,12 @@ ef:SetScript('OnEvent', function(self, event, ...)
 		if not ABBGD_db or ABBGD_db.db_version ~= db_version_required then
 			ABBGD_db = defaults
 		end
+		a.db = ABBGD_db
+		if a.db.method == 2 then
 			modify_bars()
 		end
 	else
-		if adb.method == 1 then
+		if a.db.method == 1 then
 			modify_bars()
 		end
 		update_grid_layouts()
