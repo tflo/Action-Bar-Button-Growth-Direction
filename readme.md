@@ -21,6 +21,8 @@ By default, only the button growth direction of Action Bar 1 is reversed (from â
 
 ## A bit more in-depth
 
+[If the examples in this section are not properly rendered on CurseForge, please see them [here](https://github.com/tflo/Action-Bar-Button-Growth-Direction) and file a bug report to [CF/Overwolf](https://support.curseforge.com/en/support/tickets/new) about their broken Markdown renderer.]
+
 Letâ€™s say you have an action bar with horizontal orientation like this:
 
 ```text
