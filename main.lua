@@ -9,7 +9,7 @@ local function dprint(...)
 end
 
 local defaults = {
-	db_version = 1,
+	db_version = db_version_required,
 	method = 1,
 	enable = { y = 'some', x = 'none' },
 	y = {
