@@ -52,7 +52,7 @@ The addon has no user interface. However, all settings are exposed to the SavedV
 
 It’s pretty straightforward:
 
-- You have one big table with all action bars for each the Y and the X axis. The keys (e.g. `[1]`, `[6]`) represent the action bars by index (so Action Bar 1, Action Bar 6). An action bar set to `false` will be left unchanged; if `true`, the button growth direction will be reversed on the respective axis.
+- You have one big table with all action bars for each the Y and the X axis. The order corresponds to the action bars by index (so `[1]` is Action Bar 1, `[6]` is Action Bar 6, and so on). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
 - You have a small `enabled` table. This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
   - `”none”`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
   - `”all”`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
