@@ -1,5 +1,6 @@
 local addon_name, a = ...
 
+local db_version_required = 1
 local debug = false
 local modified = {}
 
@@ -8,6 +9,7 @@ local function dprint(...)
 end
 
 local defaults = {
+	db_version = 1,
 	method = 1,
 	enable = { y = 'some', x = 'none' },
 	y = {
@@ -99,9 +101,9 @@ ef:RegisterEvent 'PLAYER_LOGIN'
 ef:SetScript('OnEvent', function(self, event, ...)
 	if event == 'ADDON_LOADED' then
 		self:UnregisterEvent 'ADDON_LOADED'
-		action_bar_growth_direction_db = action_bar_growth_direction_db or defaults
-		a.db = action_bar_growth_direction_db
-		if adb.method == 2 then
+		if not ABBGD_db or ABBGD_db.db_version ~= db_version_required then
+			ABBGD_db = defaults
+		end
 			modify_bars()
 		end
 	else

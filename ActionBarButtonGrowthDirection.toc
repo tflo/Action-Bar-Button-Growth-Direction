@@ -13,7 +13,7 @@
 ## X-Wago-ID:
 ## X-Curse-Project-ID:
 
-## SavedVariables: action_bar_growth_direction_db
+## SavedVariables: ABBGD_db
 # SavedVariablesPerCharacter:
 
 # Files
