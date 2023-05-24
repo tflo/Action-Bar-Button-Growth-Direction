@@ -54,9 +54,7 @@ The addon has __no user interface__. However, all settings are exposed to a data
 
 I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if ever – is way too much overhead for my taste.
 
-The SavedVariables file is at `../World of Warcraft/_retail_/WTF/Account/[your account number]/SavedVariables/ActionBarButtonGrowthDirection.lua`. Use a _text editor_ to edit the file (e.g. TextEdit, BBEdit, Notepad++, …), do not use a word processor (e.g. MS Word).
-
-To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
+The SavedVariables file is at `../World of Warcraft/_retail_/WTF/Account/[your account number]/SavedVariables/ActionBarButtonGrowthDirection.lua`. Use a _text editor_ to edit the file (e.g. TextEdit, BBEdit, Notepad++, …), do not use a word processor (e.g. MS Word). To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
 
 __It’s pretty straightforward:__
 
