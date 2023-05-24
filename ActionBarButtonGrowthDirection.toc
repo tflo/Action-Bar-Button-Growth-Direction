@@ -11,7 +11,7 @@
 # LoadOnDemand:
 
 ## X-Wago-ID:
-## X-Curse-Project-ID:
+# X-Curse-Project-ID: 865551
 
 ## SavedVariables: ABBGD_db
 # SavedVariablesPerCharacter:
