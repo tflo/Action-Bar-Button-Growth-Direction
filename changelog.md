@@ -1,3 +1,6 @@
+### 1.0.2 (2023-05-24)
+- Added icon for the addon list
+
 ### 1.0.1 (2023-05-24)
 - Fixed CF ID in toc
 
