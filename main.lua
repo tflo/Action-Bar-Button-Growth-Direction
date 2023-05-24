@@ -53,7 +53,7 @@ local reverse_growth = {
 			_G[bar].addButtonsToRight = not _G[bar].addButtonsToRight
 		end
 	end,
-	[2] = function(bar, axis)
+	[2] = function(axis, bar)
 		if axis == 'y' then
 			hooksecurefunc(_G[bar], 'UpdateGridLayout', function(self)
 				self.addButtonsToTop = not self.addButtonsToTop
