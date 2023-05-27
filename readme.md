@@ -16,34 +16,26 @@ This addon allows you to reverse the button growth direction.
 
 So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed_, you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
 
-By default, only the button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
+By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
 
 
 ## A bit more in-depth
 
-[If the examples in this section are not properly rendered on CurseForge, please see them [here](https://github.com/tflo/Action-Bar-Button-Growth-Direction) and file a bug report to [CF/Overwolf](https://support.curseforge.com/en/support/tickets/new) about their broken Markdown renderer.]
-
 Let’s say you have an action bar with horizontal orientation like this:
 
-```text
-1 2 3 4 5 6 7 8 9 0 Q W
-```
+1 2 3 4 5 6 7 8 9 0 Q W  
 
 If you converted this bar to 3-row bar _before Dragonflight_, you got ‘top to bottom’:
 
-```text
-1 2 3 4
-5 6 7 8
-9 0 Q W
-```
+1 2 3 4  
+5 6 7 8  
+9 0 Q W  
 
 Since Dragonflight, you get ‘bottom to top’:
 
-```text
-9 0 Q W
-5 6 7 8
-1 2 3 4
-```
+9 0 Q W  
+5 6 7 8  
+1 2 3 4  
 
 That’s where the addon comes into play: it can revert the growth direction to the one before Dragonflight (‘top to bottom’).
 
