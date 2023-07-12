@@ -14,7 +14,7 @@ I don’t know why they did this. For most action bars, this is not overly tragi
 
 This addon allows you to reverse the button growth direction.
 
-So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed_, you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
+So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
 
 By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
 
@@ -25,7 +25,7 @@ Let’s say you have an action bar with horizontal orientation like this:
 
 1 2 3 4 5 6 7 8 9 0 Q W  
 
-If you converted this bar to 3-row bar _before Dragonflight_, you got ‘top to bottom’:
+If you converted this bar to 3-row bar _before Dragonflight,_ you got ‘top to bottom’:
 
 1 2 3 4  
 5 6 7 8  
@@ -44,24 +44,24 @@ For the sake of completeness, I also added the ability to reverse the growth dir
 
 ## Setup
 
-The addon has __no user interface__. However, all settings are exposed to a database in the __SavedVariables__ file, which means you can edit them there and they will be preserved across future addon updates.
+The addon has __no user interface.__ However, all settings are exposed to a database in the __SavedVariables__ file, which means you can edit them there and they will be preserved across future addon updates.
 
-I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if ever – is way too much overhead for my taste.
+I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if ever – is way too much overhead for my taste. __It's very likely that the default settings (see below) are fine for you and you won't want to change anything.__
 
 The SavedVariables file is at `../World of Warcraft/_retail_/WTF/Account/[your account number]/SavedVariables/ActionBarButtonGrowthDirection.lua`. Use a _text editor_ to edit the file (e.g. TextEdit, BBEdit, Notepad++, …), do not use a word processor (e.g. MS Word). To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
 
 __It’s pretty straightforward:__
 
-- You have __one big table with all action bars for each the Y- and the X-axis__. The order corresponds to the action bars by index (so `[1]` is Action Bar 1, `[6]` is Action Bar 6, and so on). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
-- You have a __small `enabled` table__. This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
+- You have __one big table with all action bars for each the Y- and the X-axis.__ The order corresponds to the action bars by index (so `[1]` is Action Bar 1, `[6]` is Action Bar 6, and so on). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
+- You have a __small `enabled` table.__ This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
   - `"none"`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
   - `"all"`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
   - `"some"`: The per-bar settings from the big table for this axis will be used.
 
-The defaults are: 
+__The defaults are:__
 
-- X-axis is completely disabled (`enabled.x = "none"`), 
-- on the Y-axis, Action Bar 1 is reversed, the rest is unchanged.
+- X-axis is completely unmodified (`enabled.x = "none"`).
+- On the Y-axis, Action Bar 1 is reversed, the rest is unchanged.
 
 So, if you want to reverse all bars on the Y-axis, just set the `enabled.y` to `"all"` instead of `"some"`.
 
