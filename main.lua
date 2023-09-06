@@ -4,6 +4,8 @@ local db_version_required = 1
 local debug = false
 local modified = {}
 
+local _
+
 local function dprint(...)
 	if debug then print(addon_name, 'DEBUG:', ...) end
 end

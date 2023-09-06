@@ -1,10 +1,8 @@
 # Action Bar Button Growth Direction
 
-
 ## Summary
 
 Reverse button growth direction (top/bottom, right/left) of any multi-row/column action bar.
-
 
 ## What it does
 
@@ -17,7 +15,6 @@ This addon allows you to reverse the button growth direction.
 So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
 
 By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
-
 
 ## A bit more in-depth
 
@@ -40,7 +37,6 @@ Since Dragonflight, you get ‘bottom to top’:
 That’s where the addon comes into play: it can revert the growth direction to the one before Dragonflight (‘top to bottom’).
 
 For the sake of completeness, I also added the ability to reverse the growth direction on the X-axis (horizontal), but since Blizz hasn’t screwed that up (it’s still ‘left to right’), I don’t think there’s much use for it, and it’s completely disabled by default. But who knows, maybe they have ambitious plans to screw that up in the future.
-
 
 ## Setup
 
@@ -65,10 +61,9 @@ __The defaults are:__
 
 So, if you want to reverse all bars on the Y-axis, just set the `enabled.y` to `"all"` instead of `"some"`.
 
-
 ## Taint
 
-When I started experimenting with the scripts, I expected to get heavy taint issues (e.g. “Action blocked…” messages), because we are fiddling with global tables and on top of that, action bar tables. To my surprise, I didn’t get any taint issues, not one – so far. But this may be different for you because of different environment conditions like different addon sets, or even localizations. 
+When I started experimenting with the scripts, I expected to get heavy taint issues (e.g. “Action blocked…” messages), because we are fiddling with global tables and on top of that, action bar tables. To my surprise, I didn’t get any taint issues, not one – so far. But this may be different for you because of different environment conditions like different addon sets, or even localizations.
 
 I have added an alternative method to reverse the growth direction, which you can try _if_ you get taint with the default method. Chances are slim that it will help in this case, but they are – probably – there.
 
@@ -80,3 +75,18 @@ Please report any taint issues at the issues link (see header of the CurseForge 
 
 Feel free to post suggestions or issues at the [GitHub Issues](https://github.com/tflo/Action-Bar-Button-Growth-Direction/issues) of the repo!  
 __Please do not post issues or suggestions in the comments on CurseForge.__
+
+---
+
+__My other addons:__
+
+- [___PetWalker___](https://www.curseforge.com/wow/addons/petwalker): Never lose your pet again (…or randomly summon a
+  new one).
+- [___Auto Quest Tracker Mk III___](https://www.curseforge.com/wow/addons/auto-quest-tracker-mk-iii): Continuation of
+  the one and only original. Up to date and new features.
+- [___Move 'em All___](https://www.curseforge.com/wow/addons/move-em-all): Mass move items/stacks from your bags to
+  wherever. Works also with bag addons.
+- [___Auto-Confirm Equip___](https://www.curseforge.com/wow/addons/auto-confirm-equip): Less (or no) confirmation
+  prompts for BoE gear.
+- [___EditBox Font Improver___](https://www.curseforge.com/wow/addons/editbox-font-improver): Better fonts for
+  your macro/script edit boxes.
