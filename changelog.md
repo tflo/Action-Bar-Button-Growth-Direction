@@ -1,3 +1,7 @@
+#### 1.0.8 (2024-01-16)
+
+- Just a toc bump for 10.2.5. Compatibility update will follow if needed.
+
 #### 1.0.7 (2023-11-08)
 
 -toc update 100200; no content changes.
