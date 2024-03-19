@@ -1,3 +1,7 @@
+#### 1.0.9 (2024-03-19)
+
+- toc bump only. If necessary, the addon will be updated in the next days.
+
 #### 1.0.8 (2024-01-16)
 
 - Just a toc bump for 10.2.5. Compatibility update will follow if needed.
