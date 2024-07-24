@@ -1,3 +1,9 @@
+#### 1.0.11 (2024-07-24)
+
+- Seems to work fine with TWW 110000; further tests will follow.
+- On first launch with 110000, I had to re-enable my action bars in the client settings. Probably this is not related to the addon, not sure though.
+- toc updated for TWW 110000.
+
 #### 1.0.10 (2024-05-08)
 
 - toc bump only (100207). Addon update will follow as needed.
