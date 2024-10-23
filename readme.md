@@ -78,7 +78,7 @@ __Please do not post issues or suggestions in the comments on CurseForge.__
 
 ---
 
-__My other addons:__
+__Other addons by me:__
 
 - [___PetWalker___](https://www.curseforge.com/wow/addons/petwalker): Never lose your pet again (…or randomly summon a
   new one).
@@ -90,3 +90,7 @@ __My other addons:__
   prompts for BoE gear.
 - [___EditBox Font Improver___](https://www.curseforge.com/wow/addons/editbox-font-improver): Better fonts for
   your macro/script edit boxes.
+
+__WeakAuras:__
+
+- [___Stats Mini___](https://wago.io/S4023p3Im): A *very* compact but beautiful and feature-loaded stats display: primary/secondary stats, *all* defensive stats (also against target), GCD, speed (rating/base/actual/Skyriding), iLevel (equipped/overall/difference), char level +progress.

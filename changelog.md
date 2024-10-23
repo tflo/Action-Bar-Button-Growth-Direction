@@ -1,3 +1,14 @@
+To see all commits, including all alpha changes, [*go here*](https://github.com/tflo/PetWalker/commits/master/).
+
+---
+
+## Releases
+
+#### 1.0.12 (2024-10-23)
+
+- toc bump, docs.
+- No content changes.
+
 #### 1.0.11 (2024-07-24)
 
 - Seems to work fine with TWW 110000; further tests will follow.

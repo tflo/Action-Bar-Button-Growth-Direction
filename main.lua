@@ -140,7 +140,7 @@ end)
 
 --[[ License ===================================================================
 
-	Copyright © 2023 Thomas Floeren
+	Copyright © 2023-2024 Thomas Floeren
 
 	This file is part of NAME_OF_THIS_ADDON.
 
