@@ -8,7 +8,7 @@ Reverse button growth direction (top/bottom, right/left) of any multi-row/column
 
 With Dragonflight, Blizz changed the button growth direction for multi-row action bars. Formerly, it was ‘top to bottom’ (downwards), now it is ‘bottom to top’ (upwards).
 
-I don’t know why they did this. For most action bars, this is not overly tragic, as you can adjust your spell mapping/keybinds accordingly. However, it can be a real problem with Action Bar 1, or whatever bar is used as the override bar, resulting in the “wrong” keybinds for the override bar (vehicle UI).
+I don’t know why they did this. For most action bars, this is not overly tragic, as you can adjust your spell mapping/keybinds accordingly. However, it can be a real problem with Action Bar 1, which is used as the override and vehicle UI bar, resulting in the “wrong” keybinds in the vehicle UI.
 
 This addon allows you to reverse the button growth direction.
 
