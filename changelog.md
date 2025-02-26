@@ -4,6 +4,11 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.0.14 (2025-02-26)
+
+- Added category to toc.
+- toc bump to 110100.
+
 #### 1.0.13 (2024-12-19)
 
 - toc bump to 110007 (WoW Retail 11.0.7).

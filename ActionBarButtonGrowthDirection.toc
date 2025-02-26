@@ -1,16 +1,26 @@
-## Interface: 110007
+## Interface: 110100
 ## Title: Action Bar Button Growth Direction
-## Version: 1.0.13
+## Version: 1.0.14
 ## IconTexture: Interface/AddOns/ActionBarButtonGrowthDirection/icon.png
-## Notes: Reverse button growth direction (top/bottom, right/left) of any multi-row/column Blizz action bar.
+## Notes: Reverse button growth direction (top/bottom, right/left) of any multi-row/column Blizz action bar. Created to revert Blizz's DF change.
+## Category: Action Bars
+## Category-enUS: Action Bars
+## Category-deDE: Aktionsleisten
+## Category-esES: Barras de acción
+## Category-esMX: Barras de acción
+## Category-frFR: Barres d’action
+## Category-itIT: Barre delle azioni
+## Category-koKR: 행동 단축바
+## Category-ptBR: Barras de ação
+## Category-ruRU: Панели команд
+## Category-zhCN: 动作条
+## Category-zhTW: 快捷列
 ## Author: Mot (@6mot, @tflo)
 ## X-Wago-ID:
 ## X-Curse-Project-ID: 865551
-## X-Category: Action Bar, Interface, Hack, Miscellaneous
 ## X-License: GPLv3
 ## X-Localizations: enUS
 ## SavedVariables: ABBGD_db
-# SavedVariablesPerCharacter:
 
 # Files
 main.lua
@@ -25,7 +35,7 @@ main.lua
 
 # License ======================================================================
 #
-# Copyright © 2023–2024 Thomas Floeren
+# Copyright © 2023–2025 Thomas Floeren
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
