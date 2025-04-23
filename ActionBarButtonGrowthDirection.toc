@@ -1,6 +1,6 @@
-## Interface: 110100
+## Interface: 110105
 ## Title: Action Bar Button Growth Direction
-## Version: 1.0.14
+## Version: 1.0.15
 ## IconTexture: Interface/AddOns/ActionBarButtonGrowthDirection/icon.png
 ## Notes: Reverse button growth direction (top/bottom, right/left) of any multi-row/column Blizz action bar. Created to revert Blizz's DF change.
 ## Category: Action Bars
