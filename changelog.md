@@ -4,7 +4,13 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.0.16 (2025-06-18)
+
+- toc: Added `AllowAddOnTableAccess: 1`
+- toc: Bumped Interface to `110107`
+
 #### 1.0.15 (2025-04-23)
+
 - toc bump to 110105.
     - Seems to work fine, but not done many tests.
     - But let’s face it, get over yourself and tick that damn “Load out of date AddOns” checkbox. This (i.e not ticking this) is a 100% hypocritical assessment. If an addon author isn’t in the mood to do big revisions, he will just bump that toc number anyway. And you’ll end up with the errors, with or w/o checkbox. That’s what hypocritical means (in this context).
