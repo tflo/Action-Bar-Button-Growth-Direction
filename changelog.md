@@ -4,6 +4,11 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.0.18 (2025-09-14)
+
+- Standardized licensing information in the files.
+- ReadMe/description: minor changes; added my new addon [Auto Discount Repair](https://www.curseforge.com/wow/addons/auto-discount-repair) to the “Other addons” list.
+
 #### 1.0.17 (2025-08-05)
 
 - toc: Added interface `110200`

@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: GPL-3.0-or-later
+-- Copyright (c) 2023-2025 Thomas Floeren
+
 local addon_name, a = ...
 
 local db_version_required = 1
@@ -133,28 +136,5 @@ end)
 	Action Bar 6: MultiBar5
 	Action Bar 7: MultiBar6
 	Action Bar 8: MultiBar7
-
-==============================================================================]]
-
-
-
---[[ License ===================================================================
-
-	Copyright © 2023-2025 Thomas Floeren
-
-	This file is part of NAME_OF_THIS_ADDON.
-
-	NAME_OF_THIS_ADDON is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by the
-	Free Software Foundation, either version 3 of the License, or (at your
-	option) any later version.
-
-	NAME_OF_THIS_ADDON is distributed in the hope that it will be useful, but
-	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-	or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-	more details.
-
-	You should have received a copy of the GNU General Public License along with
-	NAME_OF_THIS_ADDON. If not, see <https://www.gnu.org/licenses/>.
 
 ==============================================================================]]
