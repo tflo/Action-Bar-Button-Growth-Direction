@@ -4,6 +4,10 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.0.19 (2025-10-07)
+
+- toc bumped to 110205, no changes.
+
 #### 1.0.18 (2025-09-14)
 
 - Standardized licensing information in the files.
