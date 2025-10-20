@@ -4,12 +4,13 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
-#### 1.0.20 (2025-10-19)
+#### 1.1.0 (2025-10-20)
 
-- toc: Bumped Interface to `110207`.
-- Prefer `MainActionBar` on newer clients and fall back to `MainMenuBar`. Added a fallback resolver to handle Blizzard's action-bar frame renames.
-- Improved frame resolution and robustness: resolved frames are stored as objects so `UpdateGridLayout` is invoked safely on them, avoiding repeated lookups.
-- Minor refactor and debug logging improvements.
+- Merged [pull request](https://github.com/tflo/Action-Bar-Button-Growth-Direction/pull/3) by [Ciaanh](https://github.com/Ciaanh). Thanks!
+    - toc: Bumped Interface to `110207`.
+    - Prefer `MainActionBar` on newer clients and fall back to `MainMenuBar`. Added a fallback resolver to handle Blizzard's action-bar frame renames.
+    - Improved frame resolution and robustness: resolved frames are stored as objects so `UpdateGridLayout` is invoked safely on them, avoiding repeated lookups.
+    - Minor refactor and debug logging improvements.
 
 #### 1.0.19 (2025-10-07)
 
