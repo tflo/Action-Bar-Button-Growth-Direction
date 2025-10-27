@@ -4,8 +4,6 @@
 
 Reverse button growth direction (top/bottom, right/left) of any multi-row/column action bar.
 
-___If you’re having trouble reading this description on CurseForge, you might want to try switching to the [REPO PAGE](https://github.com/tflo/Action-Bar-Button-Growth-Direction?tab=readme-ov-file#action-bar-button-growth-direction). You’ll find the exact same text there, but it’s much easier to read and free from CurseForge’s rendering errors.___
-
 ## What it does
 
 With Dragonflight, Blizz changed the button growth direction for multi-row action bars. Formerly, it was ‘top to bottom’ (downwards), now it is ‘bottom to top’ (upwards).
@@ -17,6 +15,12 @@ This addon allows you to reverse the button growth direction.
 So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
 
 By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
+
+---
+
+*If you’re having trouble reading this description on CurseForge, you might want to try switching to the [Repo Page](https://github.com/tflo/Action-Bar-Button-Growth-Direction?tab=readme-ov-file#action-bar-button-growth-direction). You’ll find the exact same text there, but it’s much easier to read and free from CurseForge’s rendering errors.*
+
+---
 
 ## A bit more in-depth
 
