@@ -19,7 +19,7 @@
 ## AllowAddOnTableAccess: 1
 ## X-Wago-ID:
 ## X-Curse-Project-ID: 865551
-## SPDX-License-Identifier: GPL-3.0-or-later
+## SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 ## X-Localizations: enUS
 ## SavedVariables: ABBGD_db
 
