@@ -4,6 +4,12 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.1 (2025-12-03)
+
+- Change license, add CONTRIBUTING/CLA.
+- Update readme/description.
+- toc: remove flag 110205
+
 #### 1.1.0 (2025-10-20)
 
 - Merged [pull request](https://github.com/tflo/Action-Bar-Button-Growth-Direction/pull/3) by [Ciaanh](https://github.com/Ciaanh). Thanks!
