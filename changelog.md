@@ -4,6 +4,10 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.2 (2025-12-06)
+
+- Updated readme in regard to possible taint.
+
 #### 1.1.1 (2025-12-03)
 
 - Change license, add CONTRIBUTING/CLA.

@@ -69,7 +69,13 @@ So, if you want to reverse all bars on the Y-axis, just set the `enabled.y` to `
 
 ## Taint
 
-When I started experimenting with the scripts, I expected to get heavy taint issues (e.g. “Action blocked…” messages), because we are fiddling with global tables and on top of that, action bar tables. To my surprise, I didn’t get any taint issues, not one – so far. But this may be different for you because of different environment conditions like different addon sets, or even localizations.
+When I started experimenting with the scripts, I expected to get heavy taint propagating issues (e.g. “Action blocked…” popups). The addon does nothing during combat, but still, we are fiddling with global tables (the action bars) that are further on used for secure actions. 
+
+To my surprise, I didn’t get any taint issues, not one – so far. But this may be different for you because of different environment conditions like different addon sets, or even localizations.
+
+__Update note 20225:__ I got a couple of “Action blocked” popups that blamed this addon, around late 11.2.0, but only in Edit Mode, and never later (e.g. 11.2.7). I could ignore them without consequences, and I was not able to reproduce them reliably. Never got one outside Edit Mode, never got one in any raid or other encounter, or during vehicle UIs.
+
+But this may be different for you because of different environment conditions like different addon sets, or even localizations. And any Blizz patch can change this.
 
 I have added an alternative method to reverse the growth direction, which you can try _if_ you get taint with the default method. Chances are slim that it will help in this case, but they are – probably – there.
 
