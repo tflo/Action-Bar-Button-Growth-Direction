@@ -26,6 +26,8 @@ local defaults = {
 		[6] = false,
 		[7] = false,
 		[8] = false,
+		[9] = false,
+		[10] = false,
 	},
 	x = {
 		[1] = false,
@@ -36,6 +38,7 @@ local defaults = {
 		[6] = false,
 		[7] = false,
 		[8] = false,
+		[10] = false,
 	},
 }
 
@@ -50,6 +53,8 @@ local map = {
 	[6] = 'MultiBar5',
 	[7] = 'MultiBar6',
 	[8] = 'MultiBar7',
+	[9] = 'StanceBar',
+	[10] = 'PetActionBar',
 }
 
 -- Fallbacks for frames that were renamed in recent client patches
