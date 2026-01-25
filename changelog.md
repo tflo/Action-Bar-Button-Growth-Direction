@@ -4,9 +4,13 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.5 (2026-01-25)
+
+- Add a missing entry to the defaults table.
+
 #### 1.1.4 (2026-01-17)
 
-- Added Stance Bar and Pet Bar (should fix https://github.com/tflo/Action-Bar-Button-Growth-Direction/issues/1); disabled by default. 
+- Add Stance Bar and Pet Bar (should fix https://github.com/tflo/Action-Bar-Button-Growth-Direction/issues/1); disabled by default. 
 - Bumped compatibility flags to 12000+
 - This is unapproved, but the dumb Blizz changes forces us to do this, 
 - because otherwise a still working addon would be deactivated flat out.
