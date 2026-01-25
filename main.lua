@@ -210,5 +210,7 @@ end)
 	Action Bar 6: MultiBar5
 	Action Bar 7: MultiBar6
 	Action Bar 8: MultiBar7
+	Action Bar 9: StanceBar
+	Action Bar 10: PetActionBar
 
 ==============================================================================]]
