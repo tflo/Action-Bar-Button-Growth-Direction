@@ -4,6 +4,10 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.6 (2026-01-26)
+
+- Same as 1.1.5; trying to resolve a CF build error.
+
 #### 1.1.5 (2026-01-25)
 
 - Add a missing entry to the defaults table.

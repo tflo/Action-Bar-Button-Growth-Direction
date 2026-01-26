@@ -4,7 +4,7 @@
 local addon_name, a = ...
 
 local db_version_required = 1
-local debug = false
+-- local debug = true
 local modified = {}
 
 local _
