@@ -4,6 +4,13 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.7 (2026-02-09)
+
+- Disable functionality for StanceBar and PetActionBar again.
+    - These cause problems in 12.0 prepatch.
+    - Should at least partially fix [issue 6](https://github.com/tflo/Action-Bar-Button-Growth-Direction/issues/6) and [issue 5](https://github.com/tflo/Action-Bar-Button-Growth-Direction/issues/5).
+    - I’ll try to restore the functionality at a later point, if possible.
+
 #### 1.1.6 (2026-01-26)
 
 - Same as 1.1.5; trying to resolve a CF build error.
