@@ -26,8 +26,8 @@ local defaults = {
 		[6] = false,
 		[7] = false,
 		[8] = false,
-		[9] = false,
-		[10] = false,
+-- 		[9] = false,
+-- 		[10] = false,
 	},
 	x = {
 		[1] = false,
@@ -38,15 +38,15 @@ local defaults = {
 		[6] = false,
 		[7] = false,
 		[8] = false,
-		[9] = false,
-		[10] = false,
+-- 		[9] = false,
+-- 		[10] = false,
 	},
 }
 
 local map = {
 	-- updated to match Blizzard's current frame name (MainActionBar) while
 	-- keeping a fallback resolver for older clients using MainMenuBar.
-	[1] = 'MainActionBar',
+	[1] = 'MainActionBar', -- previously MainMenuBar
 	[2] = 'MultiBarBottomLeft',
 	[3] = 'MultiBarBottomRight',
 	[4] = 'MultiBarRight',
@@ -54,8 +54,10 @@ local map = {
 	[6] = 'MultiBar5',
 	[7] = 'MultiBar6',
 	[8] = 'MultiBar7',
-	[9] = 'StanceBar',
-	[10] = 'PetActionBar',
+	-- Stance and Pet cause problems with 12.0 prepatch
+	-- Any missing mapping should be handled gracefully by modify_bars()
+-- 	[9] = 'StanceBar',
+-- 	[10] = 'PetActionBar',
 }
 
 -- Fallbacks for frames that were renamed in recent client patches
@@ -192,25 +194,3 @@ ef:SetScript('OnEvent', function(self, event, ...)
 		update_grid_layouts()
 	end
 end)
-
-
-
---[[ Notes =====================================================================
-
-	The hooked function (method 2) has to run twice after the hook to actually
-	apply the modified attribute. So we let it be run by the client during the
-	loading process, and at login we run it once again.
-
-
-	Action Bar 1: MainActionBar (previously MainMenuBar)
-	Action Bar 2: MultiBarBottomLeft
-	Action Bar 3: MultiBarBottomRight
-	Action Bar 4: MultiBarRight
-	Action Bar 5: MultiBarLeft
-	Action Bar 6: MultiBar5
-	Action Bar 7: MultiBar6
-	Action Bar 8: MultiBar7
-	Action Bar 9: StanceBar
-	Action Bar 10: PetActionBar
-
-==============================================================================]]
