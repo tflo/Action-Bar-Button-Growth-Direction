@@ -56,6 +56,10 @@ local map = {
 	[8] = 'MultiBar7',
 	-- Stance and Pet cause problems with 12.0 prepatch
 	-- Any missing mapping should be handled gracefully by modify_bars()
+	-- The taint gets refused by functions inside Blizz's ActionBarController.lua
+	-- https://www.townlong-yak.com/framexml/live/Blizzard_ActionBarController/ActionBarController.lua
+	-- Method 2 fails also (different error).
+	-- Pet bar is probably safe, but we are in prepatch, so wait.
 -- 	[9] = 'StanceBar',
 -- 	[10] = 'PetActionBar',
 }
