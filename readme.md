@@ -54,7 +54,7 @@ The SavedVariables file is at `../World of Warcraft/_retail_/WTF/Account/[your a
 
 __It’s pretty straightforward:__
 
-- You have __one big table with all action bars for each the Y- and the X-axis.__ The order corresponds to the action bars by index (so `[1]` is Action Bar 1, `[6]` is Action Bar 6, and so on). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
+- You have __one big table with all action bars for each the Y- and the X-axis.__ The order corresponds to the action bars by index (so the first one is Action Bar 1, the 6th one is Action Bar 6, and so on; see the table at the end). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
 - You have a __small `enabled` table.__ This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
   - `"none"`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
   - `"all"`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
@@ -82,6 +82,23 @@ I have added an alternative method to reverse the growth direction, which you ca
 To use the alternative method, set `method` to `2` in the SavedVariables table. If you are taint-free with the default method, do not use method 2, as it is rather clumsy and has much room for improvement.
 
 Please report any taint issues at the issues link (see header of the CurseForge page or last line of this ReadMe).
+
+---
+
+Index to bar mapping, as of 12.0.0:
+
+[table index]: [Frame] = [“name in the game GUI”]
+
+```text
+1: MainActionBar       = “Action Bar 1”
+2: MultiBarBottomLeft  = “Action Bar 2”
+3: MultiBarBottomRight = “Action Bar 3”
+4: MultiBarRight       = “Action Bar 4”
+5: MultiBarLeft        = “Action Bar 5”
+6: MultiBar5           = “Action Bar 6”
+7: MultiBar6           = “Action Bar 7”
+8: MultiBar7           = “Action Bar 8”
+```
 
 ---
 
