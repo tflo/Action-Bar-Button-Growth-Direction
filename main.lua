@@ -1,7 +1,7 @@
 -- SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 -- Copyright (c) 2023-2026 Thomas Floeren
 
-local addon_name, a = ...
+local MYNAME, _ = ...
 
 local db_version_required = 1
 -- local debug = true
@@ -135,16 +135,16 @@ local reverse_growth = {
 }
 
 local function modify_bars()
-	for axis, enableaxis in pairs(a.db.enable) do
+	for axis, enableaxis in pairs(db.enable) do
 		if enableaxis ~= 'none' then
-			local bars = a.db[axis]
+			local bars = db[axis]
 			if type(bars) == 'table' then
 				for idx, enablebar in pairs(bars) do
 					if enableaxis == 'all' or enablebar then
 						local barName = map[idx]
 						local frame, resolved = TryGetFrame(barName)
 						if frame then
-							reverse_growth[a.db.method](axis, frame, resolved or barName)
+							reverse_growth[db.method](axis, frame, resolved or barName)
 							-- Store the resolved frame to avoid re-resolving later
 							modified[resolved or barName] = frame
 						else
@@ -192,7 +192,7 @@ ef:SetScript('OnEvent', function(self, event, ...)
 			modify_bars()
 		end
 	else
-		if a.db.method == 1 then
+		if db.method == 1 then
 			modify_bars()
 		end
 		update_grid_layouts()
