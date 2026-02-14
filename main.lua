@@ -100,19 +100,19 @@ end
 
 -- Try to resolve a frame from either a name or an existing frame object.
 -- Returns: frame, resolvedName
-local function TryGetFrame(nameOrFrame)
-	if type(nameOrFrame) == 'table' then
+local function try_get_frame(name_or_frame)
+	if type(name_or_frame) == 'table' then
 		-- already a frame-like object; try to get its name if available
-		local okName = nil
-		if type(nameOrFrame.GetName) == 'function' then
-			okName = nameOrFrame:GetName()
+		local ok_name = nil
+		if type(name_or_frame.GetName) == 'function' then
+			ok_name = name_or_frame:GetName()
 		end
-		return nameOrFrame, okName
+		return name_or_frame, ok_name
 	end
-	if type(nameOrFrame) ~= 'string' then
+	if type(name_or_frame) ~= 'string' then
 		return nil, nil
 	end
-	local resolved = resolve_bar_name(nameOrFrame) or nameOrFrame
+	local resolved = resolve_bar_name(name_or_frame) or name_or_frame
 	local frame = _G[resolved]
 	if frame then
 		return frame, resolved
@@ -121,10 +121,10 @@ local function TryGetFrame(nameOrFrame)
 end
 
 local reverse_growth = {
-	-- Accepts: axis, frame, optName
-	[1] = function(axis, frame, optName)
+	-- Accepts: axis, frame, opt_name
+	[1] = function(axis, frame, opt_name)
 		if not frame then
-			dprint('reverse_growth[1]: frame not found', tostring(optName))
+			dprint('reverse_growth[1]: frame not found', tostring(opt_name))
 			return
 		end
 		if axis == 'y' then
@@ -133,9 +133,9 @@ local reverse_growth = {
 			frame.addButtonsToRight = not frame.addButtonsToRight
 		end
 	end,
-	[2] = function(axis, frame, optName)
+	[2] = function(axis, frame, opt_name)
 		if not frame then
-			dprint('reverse_growth[2]: frame not found', tostring(optName))
+			dprint('reverse_growth[2]: frame not found', tostring(opt_name))
 			return
 		end
 		if axis == 'y' then
@@ -157,15 +157,15 @@ local function modify_bars()
 			if type(bars) == 'table' then
 				for idx, enablebar in pairs(bars) do
 					if enableaxis == 'all' or enablebar then
-						local barName = map[idx]
-						local frame, resolved = TryGetFrame(barName)
+						local bar_name = map[idx]
+						local frame, resolved = try_get_frame(bar_name)
 						if frame then
-							reverse_growth[db.method](axis, frame, resolved or barName)
+							reverse_growth[db.method](axis, frame, resolved or bar_name)
 							-- Store the resolved frame to avoid re-resolving later
-							modified[resolved or barName] = frame
+							modified[resolved or bar_name] = frame
 						else
 							-- Frame not present; simply log. No deferred retry.
-							dprint('modify_bars: bar not found', tostring(barName))
+							dprint('modify_bars: bar not found', tostring(bar_name))
 						end
 					end
 				end
