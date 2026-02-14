@@ -12,7 +12,7 @@ I don’t know why they did this. For most action bars, this is not overly tragi
 
 This addon allows you to reverse the button growth direction.
 
-So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing. Be sure to read the “Taint” section further down.
+So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing.
 
 By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
 
@@ -28,7 +28,7 @@ Let’s say you have an action bar with horizontal orientation like this:
 
 1 2 3 4 5 6 7 8 9 0 Q W  
 
-If you converted this bar to 3-row bar _before Dragonflight,_ you got ‘top to bottom’:
+If you converted this bar to a 3-row bar _before Dragonflight,_ you got ‘top to bottom’:
 
 1 2 3 4  
 5 6 7 8  
@@ -42,37 +42,47 @@ Since Dragonflight, you get ‘bottom to top’:
 
 That’s where the addon comes into play: it can revert the growth direction to the one before Dragonflight (‘top to bottom’).
 
-For the sake of completeness, I also added the ability to reverse the growth direction on the X-axis (horizontal), but since Blizz hasn’t screwed that up (it’s still ‘left to right’), I don’t think there’s much use for it, and it’s completely disabled by default. But who knows, maybe they have ambitious plans to screw that up in the future.
+For the sake of completeness, I also added the ability to reverse the growth direction on the X-axis (horizontal), but since Blizz hasn’t screwed that up (it’s still ‘left to right’), I don’t think there’s much use for it, and the X-axis is completely untouched by default. But who knows, maybe they have ambitious plans to screw that up in the future.
 
 ## Setup
 
-The addon has __no user interface.__ However, all settings are exposed to a database in the __SavedVariables__ file, which means you can edit them there and they will be preserved across future addon updates.
+The addon has __no user interface__ at all, not even slash commands. However, all settings are exposed to a database in the __SavedVariables__ file, which means you can edit them there and they will be preserved across future addon updates.
 
-I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if ever – is way too much overhead for my taste. __It's very likely that the default settings (see below) are fine for you and you won't want to change anything.__
+I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if at all – is way too much overhead for my taste.
 
-The SavedVariables file is at `../World of Warcraft/_retail_/WTF/Account/[your account number]/SavedVariables/ActionBarButtonGrowthDirection.lua`. Use a _text editor_ to edit the file (e.g. TextEdit, BBEdit, Notepad++, …), do not use a word processor (e.g. MS Word). To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
+__If you only want to reverse the Y (vertical) growth direction on Action Bar 1 (MainActionBar),__ which is the bar where the wrong growth direction causes key mis-mapping issues on the VehicleUI bar, __then the default settings are fine for you.__
+
+### Changing settings
+
+The SavedVariables file is at `…/World of Warcraft/_retail_/WTF/Account/<your account number>/SavedVariables/ActionBarButtonGrowthDirection.lua`. 
+
+Use a _text editor_ to edit the file (for example, BBEdit, CotEditor, Notepad++, …), do not use a word processor or Rich Text editor like Pages or MS Word. To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
 
 __It’s pretty straightforward:__
 
-- You have __one big table with all action bars for each the Y- and the X-axis.__ The order corresponds to the action bars by index (so the first one is Action Bar 1, the 6th one is Action Bar 6, and so on; see the table at the end). An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
-- You have a __small `enabled` table.__ This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
-  - `"none"`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
-  - `"all"`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
-  - `"some"`: The per-bar settings from the big table for this axis will be used.
+In the SavedVariables file, you’ll see…
+
+- One __big Lua table with all action bars per Y- and one per X-axis__ (the __`["x"]`__ and __`["y"]`__ tables).
+    - The order of the entries inside corresponds to the action bars by index (so the first entry is Action Bar 1, the 6th one is Action Bar 6, and so on; see the little table at the end of this readme).
+    - An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
+- A __small `["enable"]` table__ with 2 entries, `["x"]` and `["y"]`. This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
+    - `"none"`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
+    - `"all"`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
+    - `"some"`: The per-bar settings from the big table for this axis will be used.
 
 __The defaults are:__
 
-- X-axis is completely unmodified (`enabled.x = "none"`).
-- On the Y-axis, Action Bar 1 is reversed, the rest is unchanged.
+- X-axis is completely unmodified (the `["x"]` inside the `["enable"]` table is `"none"`).
+- On the Y-axis, Action Bar 1 is reversed (first entry in the big `["y"]` table is `true`), the rest is unchanged.
+- `["y"]` inside the `["enable"]` table is `"some"`, so that the `true` for Action Bar 1 is used..
 
-So, if you want to reverse all bars on the Y-axis, just set the `enabled.y` to `"all"` instead of `"some"`.
-
+So, if you want to __reverse *all* bars on the Y-axis,__ just set the `["y"]` in the `["enable"]` table to `"all"` instead of `"some"` (no need to set each bar individually to true in the ["y"] table).
 
 ---
 
-Index to bar mapping, as of 12.0.0:
+Index to bar mapping, as of 12.0.1:
 
-[table index]: [Frame] = [“name in the game GUI”]
+\[ABBGD table index\]: \[Frame\] = \[“name in the game GUI”\]
 
 ```text
 1: MainActionBar       = “Action Bar 1”
@@ -102,4 +112,4 @@ __Addons by me:__
 - [___Auto-Confirm Equip___](https://www.curseforge.com/wow/addons/auto-confirm-equip): Less (or no) confirmation prompts for BoE and BtW gear.
 - [___Slip Frames___](https://www.curseforge.com/wow/addons/slip-frames): Unit frame transparency and click-through on demand – for Player, Pet, Target, and Focus frame.
 - [___Action Bar Button Growth Direction___](https://www.curseforge.com/wow/addons/action-bar-button-growth-direction): Fix the button growth direction of multi-row action bars to what is was before Dragonflight (top --> bottom).
-- [___EditBox Font Improver___](https://www.curseforge.com/wow/addons/editbox-font-improver): Better fonts and font size for the macro/script edit boxes of many addons, incl. Blizz's. Comes with 70+ preinstalled monospaced fonts.
+- [___EditBox Font Improver___](https://www.curseforge.com/wow/addons/editbox-font-improver): Better fonts and font size for the macro/script edit boxes of many addons, incl. Blizz’s. Comes with 70+ preinstalled monospaced fonts.
