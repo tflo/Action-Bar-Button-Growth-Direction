@@ -10,6 +10,8 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 - Remove Taint section from the readme:
     - Users will report it anyway.
     - The previous “method 2” recommendation likely won’t help. At least it didn’t with the recent StanceBar taint issues.
+- Clean up code, remove weird stuff. Addon still seems to work.
+- Sanitize variable and function names.
 
 #### 1.1.7 (2026-02-09)
 
