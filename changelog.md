@@ -4,6 +4,13 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.8 (2026-02-14)
+
+- Improve Setup section of the readme.
+- Remove Taint section from the readme:
+    - Users will report it anyway.
+    - The previous “method 2” recommendation likely won’t help. At least it didn’t with the recent StanceBar taint issues.
+
 #### 1.1.7 (2026-02-09)
 
 - Disable functionality for StanceBar and PetActionBar again.
