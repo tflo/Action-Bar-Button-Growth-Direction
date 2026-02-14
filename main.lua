@@ -43,6 +43,16 @@ local defaults = {
 	},
 }
 
+-- We have `LoadSavedVariablesFirst: 1`
+
+if type(ABBGD_db) ~= 'table' or ABBGD_db.db_version ~= DB_VERSION then
+	ABBGD_db = defaults
+end
+
+-- No db merge needed ATM
+
+local db = ABBGD_db
+
 local map = {
 	-- updated to match Blizzard's current frame name (MainActionBar) while
 	-- keeping a fallback resolver for older clients using MainMenuBar.
@@ -184,10 +194,6 @@ ef:RegisterEvent 'PLAYER_LOGIN'
 ef:SetScript('OnEvent', function(self, event, ...)
 	if event == 'ADDON_LOADED' then
 		self:UnregisterEvent 'ADDON_LOADED'
-		if not ABBGD_db or ABBGD_db.db_version ~= db_version_required then
-			ABBGD_db = defaults
-		end
-		a.db = ABBGD_db
 		if a.db.method == 2 then
 			modify_bars()
 		end
