@@ -3,18 +3,19 @@
 
 local MYNAME, _ = ...
 
-local db_version_required = 1
+local DB_VERSION = 1
 -- local debug = true
-local modified = {}
-
-local _
 
 local function dprint(...)
-	if debug then print(addon_name, 'DEBUG:', ...) end
+	if debug then print(MYNAME, 'DEBUG:', ...) end
 end
 
+--[[===========================================================================
+	Init
+===========================================================================]]--
+
 local defaults = {
-	db_version = db_version_required,
+	db_version = DB_VERSION,
 	method = 1,
 	enable = { y = 'some', x = 'none' },
 	y = {
@@ -53,6 +54,11 @@ end
 
 local db = ABBGD_db
 
+--[[===========================================================================
+	Main
+===========================================================================]]--
+
+local modified = {}
 local map = {
 	-- updated to match Blizzard's current frame name (MainActionBar) while
 	-- keeping a fallback resolver for older clients using MainMenuBar.
@@ -186,15 +192,18 @@ end
 
 -- pending hook retry logic removed; frames not found are logged instead
 
+--[[===========================================================================
+	Events
+===========================================================================]]--
 
 local ef = CreateFrame 'Frame'
 ef:RegisterEvent 'ADDON_LOADED'
 ef:RegisterEvent 'PLAYER_LOGIN'
 
-ef:SetScript('OnEvent', function(self, event, ...)
+ef:SetScript('OnEvent', function(self, event)
 	if event == 'ADDON_LOADED' then
 		self:UnregisterEvent 'ADDON_LOADED'
-		if a.db.method == 2 then
+		if db.method == 2 then
 			modify_bars()
 		end
 	else
