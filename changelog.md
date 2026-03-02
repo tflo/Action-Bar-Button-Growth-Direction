@@ -4,6 +4,10 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.1.9 (2026-03-02)
+
+- Remove old interface compatibility flags from toc.
+
 #### 1.1.8 (2026-02-14)
 
 - Improve Setup section of the readme.
