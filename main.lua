@@ -60,8 +60,8 @@ local db = ABBGD_db
 
 local modified = {}
 local map = {
-	-- updated to match Blizzard's current frame name (MainActionBar) while
-	-- keeping a fallback resolver for older clients using MainMenuBar.
+	-- updated to match Blizzard's current frame name (MainActionBar), both for Classic and Retail
+	-- while keeping a fallback resolver for older clients using MainMenuBar.
 	[1] = 'MainActionBar', -- previously MainMenuBar
 	[2] = 'MultiBarBottomLeft',
 	[3] = 'MultiBarBottomRight',

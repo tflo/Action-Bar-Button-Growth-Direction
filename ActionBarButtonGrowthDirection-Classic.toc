@@ -1,0 +1,28 @@
+## Interface: 11509
+
+## Title: Action Bar Button Growth Direction
+## Notes: Reverse button growth direction (top/bottom, right/left) of Blizzard action bars.
+
+## Author: Mot (@6mot, @tflo)
+## Version: 1.1.10
+## IconTexture: Interface/AddOns/ActionBarButtonGrowthDirection/icon.png
+## Category: Action Bars
+## Category-enUS: Action Bars
+## Category-deDE: Aktionsleisten
+## Category-esES: Barras de acción
+## Category-esMX: Barras de acción
+## Category-frFR: Barres d’action
+## Category-itIT: Barre delle azioni
+## Category-koKR: 행동 단축바
+## Category-ptBR: Barras de ação
+## Category-ruRU: Панели команд
+## Category-zhCN: 动作条
+## Category-zhTW: 快捷列
+## AllowAddOnTableAccess: 1
+## LoadSavedVariablesFirst: 1
+## X-Curse-Project-ID: 865551
+## SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+## SavedVariables: ABBGD_db
+
+# Files
+main.lua
