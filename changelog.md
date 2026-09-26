@@ -4,10 +4,30 @@ To see all commits, including all alpha changes, [*go here*](https://github.com/
 
 ## Releases
 
+#### 1.2.1 (2026-09-19)
+
+- toc bump to support Forever
+- Replaced the field-write/UpdateGridLayout mechanism with a taint-safe method :
+  reposition the bar's button container  children directly, replicating Blizzard's
+  grid math, without writing to the bar's own fields or calling a method on it.
+- Fixes taint spreading to unrelated systems (party frame health/range,
+  action button cooldowns, Edit Mode `ClearTarget`) reported as
+  "tainted by 'ActionBarButtonGrowthDirection'" on the 1.60 (Forever) beta.
+- Existing profiles using previous method are auto-migrated to the new one.
+- Added an in-game options panel with dropdowns for the X/Y "enable" mode and per-bar checkboxes.
+  Changes apply live; unchecking a bar restores its default layout immediately.
+- Postpone re-layouts requested in combat until combat ends (the button containers are restricted in combat).
+- Re-apply after Edit Mode changes (`EDIT_MODE_LAYOUTS_UPDATED`, Edit Mode exit) and stance bar button count changes (`UPDATE_SHAPESHIFT_FORMS`), which previously reverted the reversal.
+- Options panel: the “Defaults” button now restores the real defaults (Action Bar 1 reversed on Y, X untouched).
+- Repair incomplete SavedVariables (missing bar entries) instead of breaking the options panel.
+- Remove the legacy methods 1/2 and the unused `MainMenuBar` name fallback.
+- Only re-lay out a bar when Blizzard has re-laid it out since the last pass, or when the settings changed; most events (page/form changes, pet updates, combat) now cost next to nothing.
+
 #### 1.2.0 (2026-09-18)
 
 - Add Classic compatibility flag to toc (thanks to @Ciaanh; see [PR](https://github.com/tflo/Action-Bar-Button-Growth-Direction/pull/10)).
 - Update Retail toc flags.
+
 
 #### 1.1.10 (2026-06-14)
 

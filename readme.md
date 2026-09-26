@@ -12,7 +12,7 @@ I don’t know why they did this. For most action bars, this is not overly tragi
 
 This addon allows you to reverse the button growth direction.
 
-So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance, it does its stuff only at login, then nothing.
+So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance: it only re-arranges the buttons when the bar layout can change (login, bar/page changes, Edit Mode, stance/pet changes), and never touches the bars in combat (a pending change is applied right after combat ends).
 
 By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
 
@@ -46,13 +46,13 @@ For the sake of completeness, I also added the ability to reverse the growth dir
 
 ## Setup
 
-The addon has __no user interface__ at all, not even slash commands. However, all settings are exposed to a database in the __SavedVariables__ file, which means you can edit them there and they will be preserved across future addon updates.
+Open the options panel via __Game Menu > Options > AddOns > Action Bar Button Growth Direction__. There you can set the mode per axis (None / Per bar / All bars) and, in “Per bar” mode, choose the bars to reverse. Changes apply immediately, no reload needed; the panel’s “Defaults” button restores the default settings.
 
-I hope you can live with that, but adding a config UI for something that you will change once in your WoW lifetime – if at all – is way too much overhead for my taste.
+Alternatively, all settings are stored in the __SavedVariables__ file, which you can also edit by hand (see below).
 
 __If you only want to reverse the Y (vertical) growth direction on Action Bar 1 (MainActionBar),__ which is the bar where the wrong growth direction causes key mis-mapping issues on the VehicleUI bar, __then the default settings are fine for you.__
 
-### Changing settings
+### Changing settings in the SavedVariables file
 
 The SavedVariables file is at `…/World of Warcraft/_retail_/WTF/Account/<your account number>/SavedVariables/ActionBarButtonGrowthDirection.lua`. 
 
@@ -93,6 +93,8 @@ Index to bar mapping, as of 12.0.1:
 6: MultiBar5           = “Action Bar 6”
 7: MultiBar6           = “Action Bar 7”
 8: MultiBar7           = “Action Bar 8”
+9: StanceBar           = “Stance/Shapeshift Bar”
+10: PetActionBar       = “Pet Action Bar”
 ```
 
 ---
