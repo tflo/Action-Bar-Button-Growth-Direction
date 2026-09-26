@@ -44,12 +44,12 @@ local function make_enable_dropdown(category, axis, axis_label)
 	end
 
 	local setting = Settings.RegisterProxySetting(
-		category, 
-		'ABBGD_enable_' .. axis, 
+		category,
+		'ABBGD_enable_' .. axis,
 		Settings.VarType.String,
 		axis_label .. '-axis mode',
 		defaults.enable[axis],
-		get, 
+		get,
 		set
 	)
 
@@ -60,10 +60,10 @@ local function make_enable_dropdown(category, axis, axis_label)
 		end
 		return container:GetData()
 	end
-	
+
 	return Settings.CreateDropdown(
-		category, 
-		setting, 
+		category,
+		setting,
 		options,
 		'Controls whether the ' .. axis_label .. '-axis growth direction is reversed, and for which bars.')
 end
@@ -72,10 +72,10 @@ end
 -- greyed out and non-interactive unless that axis' enable mode is 'some' (per bar).
 local function make_bar_checkboxes(category, axis, axis_label, note, parent_initializer)
 	local function is_per_bar_mode() return db.enable[axis] == 'some' end
-	
+
 	for idx = 1, MAX_BAR_INDEX do
 		local current_idx = idx
-		
+
 		local label = BAR_LABELS[current_idx] or tostring(current_idx)
 		local function get() return db[axis][current_idx] == true end
 		local function set(value)
@@ -84,17 +84,17 @@ local function make_bar_checkboxes(category, axis, axis_label, note, parent_init
 		end
 
 		local setting = Settings.RegisterProxySetting(
-			category, 
-			'ABBGD_' .. axis .. '_' .. current_idx, 
+			category,
+			'ABBGD_' .. axis .. '_' .. current_idx,
 			Settings.VarType.Boolean,
 			label,
 			defaults[axis][current_idx],
-			get, 
+			get,
 			set
 		)
 		local checkbox = Settings.CreateCheckbox(
-			category, 
-			setting, 
+			category,
+			setting,
 			'Reverse the ' .. axis_label .. '-axis growth direction of ' .. label .. note)
 		if parent_initializer then
 			checkbox:SetParentInitializer(parent_initializer, is_per_bar_mode)
@@ -111,7 +111,7 @@ local function build_options_panel()
 	local ok, err = pcall(function()
 		local category = Settings.RegisterVerticalLayoutCategory('Action Bar Button Growth Direction')
 		Settings.RegisterAddOnCategory(category)
-		
+
 		Settings.RegisterInitializer(category, CreateSettingsListSectionHeaderInitializer('Y-axis reversal :'))
 		local y_dropdown = make_enable_dropdown(category, 'y', 'Y')
 		make_bar_checkboxes(category, 'y', 'Y', '. Only used when the Y-axis dropdown above is set to "Per bar".', y_dropdown)
