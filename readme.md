@@ -2,19 +2,19 @@
 
 ## Summary
 
-Reverse button growth direction (top/bottom, right/left) of any multi-row/column action bar.
+Reverse button growth direction (top/bottom, right/left) of any Blizzard action bar.
 
 ## What it does
 
-With Dragonflight, Blizz changed the button growth direction for multi-row action bars. Formerly, it was ‘top to bottom’ (downwards), now it is ‘bottom to top’ (upwards).
+With Dragonflight, Blizzard changed the button growth direction for multi-row action bars. Formerly, it was ‘top to bottom’ (downwards), now it is ‘bottom to top’ (upwards).
 
-I don’t know why they did this. For most action bars, this is not overly tragic, as you can adjust your spell mapping/keybinds accordingly. However, it can be a real problem with Action Bar 1, which is used as the override and vehicle UI bar, resulting in the “wrong” keybinds in the vehicle UI.
+I don’t know why they did this. For most action bars, this is not overly tragic, as you can adjust your spell mapping/keybinds accordingly. However, it can be a real problem with Action Bar 1 (Main Action Bar), which is used as Override and Vehicle UI bar, resulting in “wrong”, awkward keybinds in the Vehicle UI.
 
 This addon allows you to reverse the button growth direction.
 
-So if you were tempted to use a ‘biggy’ addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give this one a try. It has no impact on your client performance: it only re-arranges the buttons when the bar layout can change (login, bar/page changes, Edit Mode, stance/pet changes), and never touches the bars in combat (a pending change is applied right after combat ends).
+So if you were tempted to use a “biggy” addon like Dominos or Bartender _just to get the button growth direction fixed,_ you might want to give ABBGD a try. It has no impact on your client performance: it only re-arranges the buttons when the bar layout can change (login, bar/page changes, Edit Mode, stance/pet changes), and never touches the bars in combat (a pending change is applied right after combat ends).
 
-By default, only the Y-axis button growth direction of Action Bar 1 is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
+By default, only the Y-axis button growth direction of Action Bar 1 (Main Action Bar) is reversed (from ‘bottom to top’ to ‘top to bottom’); everything else remains unchanged.
 
 ---
 
@@ -24,7 +24,7 @@ By default, only the Y-axis button growth direction of Action Bar 1 is reversed 
 
 ## A bit more in-depth
 
-Let’s say you have an action bar with horizontal orientation like this:
+Let’s say you have an action bar with an horizontal orientation like this:
 
 1 2 3 4 5 6 7 8 9 0 Q W  
 
@@ -40,13 +40,13 @@ Since Dragonflight, you get ‘bottom to top’:
 5 6 7 8  
 1 2 3 4  
 
-That’s where the addon comes into play: it can revert the growth direction to the one before Dragonflight (‘top to bottom’).
+That’s where the addon comes in: it can revert the growth direction to the one before Dragonflight (‘top to bottom’). Or to whatever you like.
 
 For the sake of completeness, I also added the ability to reverse the growth direction on the X-axis (horizontal), but since Blizz hasn’t screwed that up (it’s still ‘left to right’), I don’t think there’s much use for it, and the X-axis is completely untouched by default. But who knows, maybe they have ambitious plans to screw that up in the future.
 
 ## Setup
 
-Open the options panel via __Game Menu > Options > AddOns > Action Bar Button Growth Direction__. There you can set the mode per axis (None / Per bar / All bars) and, in “Per bar” mode, choose the bars to reverse. Changes apply immediately, no reload needed; the panel’s “Defaults” button restores the default settings.
+Open the settings panel via __Game Menu > Options > AddOns > Action Bar Button Growth Direction__. There you can set the mode per axis (None / Per bar / All bars) and, in “Per bar” mode, choose the bars to reverse. Changes apply immediately, no reload needed; the panel’s “Defaults” button restores the default settings.
 
 __If you only want to reverse the Y (vertical) growth direction on Action Bar 1 (MainActionBar),__ which is the bar where the wrong growth direction causes key mis-mapping issues on the VehicleUI bar, __then the default settings are fine for you.__
 
