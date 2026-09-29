@@ -48,54 +48,7 @@ For the sake of completeness, I also added the ability to reverse the growth dir
 
 Open the options panel via __Game Menu > Options > AddOns > Action Bar Button Growth Direction__. There you can set the mode per axis (None / Per bar / All bars) and, in “Per bar” mode, choose the bars to reverse. Changes apply immediately, no reload needed; the panel’s “Defaults” button restores the default settings.
 
-Alternatively, all settings are stored in the __SavedVariables__ file, which you can also edit by hand (see below).
-
 __If you only want to reverse the Y (vertical) growth direction on Action Bar 1 (MainActionBar),__ which is the bar where the wrong growth direction causes key mis-mapping issues on the VehicleUI bar, __then the default settings are fine for you.__
-
-### Changing settings in the SavedVariables file
-
-The SavedVariables file is at `…/World of Warcraft/_retail_/WTF/Account/<your account number>/SavedVariables/ActionBarButtonGrowthDirection.lua`. 
-
-Use a _text editor_ to edit the file (for example, BBEdit, CotEditor, Notepad++, …), do not use a word processor or Rich Text editor like Pages or MS Word. To edit and save the file in-place, you don’t have to quit WoW but you have to be logged out. Otherwise the client will overwrite your changes at next logout/reload.
-
-__It’s pretty straightforward:__
-
-In the SavedVariables file, you’ll see…
-
-- One __big Lua table with all action bars per Y- and one per X-axis__ (the __`["x"]`__ and __`["y"]`__ tables).
-    - The order of the entries inside corresponds to the action bars by index (so the first entry is Action Bar 1, the 6th one is Action Bar 6, and so on; see the little table at the end of this readme).
-    - An action bar set to `false` will be left unchanged; if set to `true`, the button growth direction will be reversed on the respective axis.
-- A __small `["enable"]` table__ with 2 entries, `["x"]` and `["y"]`. This is a quick way to set the behavior for _all_ bars per axis, and it can overwrite any setting in the big per-bar tables. You can set it to:
-    - `"none"`: No bar will be reversed for the respective axis. Per-bar settings are ignored.
-    - `"all"`: All bars will be reversed for the respective axis. Per-bar settings are ignored.
-    - `"some"`: The per-bar settings from the big table for this axis will be used.
-
-__The defaults are:__
-
-- X-axis is completely unmodified (the `["x"]` inside the `["enable"]` table is `"none"`).
-- On the Y-axis, Action Bar 1 is reversed (first entry in the big `["y"]` table is `true`), the rest is unchanged.
-- `["y"]` inside the `["enable"]` table is `"some"`, so that the `true` for Action Bar 1 is used..
-
-So, if you want to __reverse *all* bars on the Y-axis,__ just set the `["y"]` in the `["enable"]` table to `"all"` instead of `"some"` (no need to set each bar individually to true in the ["y"] table).
-
----
-
-Index to bar mapping, as of 12.0.1:
-
-\[ABBGD table index\]: \[Frame\] = \[“name in the game GUI”\]
-
-```text
-1: MainActionBar       = “Action Bar 1”
-2: MultiBarBottomLeft  = “Action Bar 2”
-3: MultiBarBottomRight = “Action Bar 3”
-4: MultiBarRight       = “Action Bar 4”
-5: MultiBarLeft        = “Action Bar 5”
-6: MultiBar5           = “Action Bar 6”
-7: MultiBar6           = “Action Bar 7”
-8: MultiBar7           = “Action Bar 8”
-9: StanceBar           = “Stance/Shapeshift Bar”
-10: PetActionBar       = “Pet Action Bar”
-```
 
 ---
 
